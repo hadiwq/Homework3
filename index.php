@@ -21,7 +21,7 @@ $dbname = "myDB";
   die("Connection failed: " . $conn->connect_error);
 } 
   
-  $sql = "SELECT * FROM classroom"
+  $sql = "SELECT * FROM classroom";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   echo "<table><tr><th>Room Number</th><th>Room Building</th></tr>";
