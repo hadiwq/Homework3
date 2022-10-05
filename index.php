@@ -21,13 +21,13 @@ $dbname = "alqadiou_homework3";
   die("Connection failed: " . $conn->connect_error);
 } 
   
-  $sql = "SELECT * FROM classroom";
+  $sql = "SELECT * FROM school";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-  echo "<table><tr><th>Room Number</th><th>Room Building</th></tr>";
+  echo "<table><tr><th>School ID</th><th>School Name</th></tr>";
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row["room_num"]."</td><td>".$row["room_building"]."</td></tr>";
+    echo "<tr><td>".$row["school_id"]."</td><td>".$row["school_name"]."</td></tr>";
   }
   echo "</table>";
 } else {
