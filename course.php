@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
   echo "<table><tr><th>Course ID</th><th>Prefix</th><th>Course Name</th><th>School ID</th></tr>";
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row["course_id"]."</td><td>".$row["prefix"]."</td><td>".$row["description"]."</td><td>".$row["school_id"]."</td></tr>";
+    echo "<tr>a href="test.html"<td>".$row["course_id"]."</td><td>".$row["prefix"]."</td><td>".$row["description"]."</td><td>".$row["school_id"]."</td></tr>";
   }
   echo "</table>";
 } else {
