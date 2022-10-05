@@ -21,7 +21,7 @@ $dbname = "alqadiou_homework3";
   die("Connection failed: " . $conn->connect_error);
 } 
   
-  $sql = "SELECT * FROM course";
+  $sql = "SELECT course.course_id, course.prefix, course.description, school.school_id FROM course INNER JOIN school ON course.school_id=school.school_id";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   echo "<table><tr><th>Course ID</th><th>Prefix</th><th>Course Name</th><th>School ID</th></tr>";
