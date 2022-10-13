@@ -25,7 +25,7 @@ $dbname = "alqadiou_homework3";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   echo "<table><tr><th>School ID</th><th>School Name</th></tr>";
-  // output data of each row
+  
   while($row = $result->fetch_assoc()) {
     echo "<tr><td>".$row["school_id"]."</td><td>".$row["school_name"]."</td></tr>";
   }
