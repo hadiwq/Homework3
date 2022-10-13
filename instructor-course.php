@@ -14,8 +14,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Course ID</th>
+      <th>Prefix</th>
+      <th>Description</th>
+      <th>Instructor ID</th>
       <th>Instructor Name</th>
-      <th>Classroom</th>
     </tr>
   </thead>
   <tbody>
