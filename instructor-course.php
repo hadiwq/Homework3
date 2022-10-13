@@ -34,9 +34,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$iid = $_GET['id'];
+$id = $_GET['id'];
 
-$sql = "select course_id, description, i.instructor_name, c.prefix, c.description from course s join instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id where i.instructor_id=" . $iid;
+$sql = "select course_id, description, i.instructor_name, c.prefix, c.description from course s join instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id where i.instructor_id=" . $id;
 
     $result = $conn->query($sql);
 
@@ -58,3 +58,8 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+</tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
