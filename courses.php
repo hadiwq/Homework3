@@ -17,8 +17,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Course ID</th>
+      <th>Prefix</th> 
+      <th>Course Name</th>
       <th>School ID</th>
-      <th>School Name</th>
     </tr>
   </thead>
   <tbody>
