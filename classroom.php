@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
   echo "<table><tr><th>Room Number</th><th>Room Building</th><th>School ID</th></tr>";
   
   while($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row["room_num"]."</td><td>".$row["room_building"]."</td></tr>".$row["school_id"]."</td></tr>";
+    echo "<tr><td>".$row["room_num"]."</td><td>".$row["room_building"]."</td><td>".$row["school_id"]."</td></tr>";
   }
   echo "</table>";
 } else {
