@@ -37,10 +37,11 @@ if ($conn->connect_error) {
 }
 $iid = $_GET['id'];
 
-$sql = "SELECT `course`.`course_id`, `course`.`prefix`, `course`.`description`, `course`.`instructor_id`, `instructor`.`instructor_name`
+$sql = "SSELECT `course`.`course_id`, `course`.`prefix`, `course`.`description`, `course`.`instructor_id`, `instructor`.`instructor_name`, `school`.`school_id`
 FROM `course`
 	, `instructor`
-WHERE `course`.`instructor_id` = `instructor`.`instructor_id`=" . $iid;
+	, `school`
+WHERE `course`.`instructor_id` = `instructor`.`instructor_id` AND `school`.`school_id` = `course`.`school_id`=" . $iid;
 
     $result = $conn->query($sql);
 
