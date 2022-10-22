@@ -1,15 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
-</head>
-<body>
+<?php require_once("header.php"); ?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
 
-<?php
+
+
+<body>
+    <h1></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Room Number</th>
+      <th>Room Buillding</th>
+        <th>School ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
 $servername = "165.227.18.177";
 $username = "alqadiou";
 $password = "1[L0B2U1kkqXh*";
@@ -21,13 +36,13 @@ $dbname = "alqadiou_homework3";
   die("Connection failed: " . $conn->connect_error);
 } 
   
-  $sql = "SELECT course.course_id, course.school_id, school.school_name FROM course INNER JOIN school on course.school_id=school.school_id";
+  $sql = "SELECT * from classroom";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   echo "<table><tr><th>School ID</th><th>School Name</th></tr>";
   
   while($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row["school_id"]."</td><td>".$row["school_name"]."</td></tr>";
+    echo "<tr><td>".$row["room_num"]."</td><td>".$row["room_building"]."</td></tr>".$row["school_id"]."</td></tr>";
   }
   echo "</table>";
 } else {
