@@ -41,7 +41,7 @@ $sql = "SSELECT `course`.`course_id`, `course`.`prefix`, `course`.`description`,
 FROM `course`
 	, `instructor`
 	, `school`
-WHERE `course`.`instructor_id` = `instructor`.`instructor_id` AND `school`.`school_id` = `course`.`school_id`=" . $iid;
+WHERE `course`.`instructor_id` = `instructor`.`instructor_id` AND `school`.`school_id` = `course`.`school_id`=" .$iid;
 
     $result = $conn->query($sql);
 
