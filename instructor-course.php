@@ -37,7 +37,7 @@ if ($conn->connect_error) {
 }
 $iid = $_GET['id'];
 
-$sql = "SSELECT `course`.`course_id`, `course`.`prefix`, `course`.`description`, `course`.`instructor_id`, `instructor`.`instructor_name`, `school`.`school_id`
+$sql = "SELECT `course`.`course_id`, `course`.`prefix`, `course`.`description`, `course`.`instructor_id`, `instructor`.`instructor_name`, `school`.`school_id`
 FROM `course`
 	, `instructor`
 	, `school`
