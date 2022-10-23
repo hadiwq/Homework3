@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 <body>
-    <h1></h1>
+    <h1>Courses</h1>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -39,7 +39,7 @@ $iid = $_GET['school_id'];
 
 $sql = "SELECT c.course_id, c.prefix, c.description, c.instructor_id, i.instructor_name
 FROM school s JOIN course c ON s.school_id = c.school_id JOIN instructor i ON i.instructor_id=c.instructor_id
-WHERE c.school_id" . $iid;
+WHERE c.school_id=" . $iid;
 
     $result = $conn->query($sql);
 
