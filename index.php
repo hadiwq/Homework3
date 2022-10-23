@@ -14,7 +14,7 @@
 
 
 <body>
-    <h1></h1>
+    <h1>Schools</h1>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -35,7 +35,7 @@ $dbname = "alqadiou_homework3";
   die("Connection failed: " . $conn->connect_error);
 } 
   
-  $sql = "SELECT * FROM school";
+  $sql = "SELECT s.school_name, s.school_id  FROM school s";
     $result = $conn->query($sql);
     
 if ($result->num_rows > 0) {
