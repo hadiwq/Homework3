@@ -43,8 +43,8 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["school_id"]?></td>
-    <td><a href="instructor-course.php?school_id=<?=$row["school_id"]?>"><?=$row["school_id"]?></a></td>
+    <td><a href="instructor-course.php?school_id=<?=$row["school_id"]?>"><?=$row["school_id"]?></td>
+    <td><?=$row["school_name"]?></td>
     
   </tr>
 <?php
