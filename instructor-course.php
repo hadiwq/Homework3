@@ -35,7 +35,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$iid = $_GET['id'];
+$iid = $_GET['school_id'];
 
 $sql = "SELECT `course`.`course_id`, `course`.`prefix`, `course`.`description`, `course`.`instructor_id`, `instructor`.`instructor_name`
 FROM `course`
