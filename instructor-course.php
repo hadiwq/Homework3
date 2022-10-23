@@ -39,7 +39,7 @@ $iid = $_GET['id'];
 
 $sql = "SELECT `course`.`course_id`, `course`.`prefix`, `course`.`description`, `course`.`course_id`, `course`.`instructor_id`
 FROM `course`
-WHERE `course`.`course_id` = `classroom`.`school_id`=" .$iid;
+WHERE `course`.`course_id` = `course`.`school_id`=" .$iid;
 
     $result = $conn->query($sql);
 
