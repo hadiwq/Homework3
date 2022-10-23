@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["school_id"]?></td>
-    <td><a href="instructor-course.php?id=<?=$row["school_id"]?>"><?=$row["school_name"]?></a></td>
+    <td><a href="instructor-course.php?school_id=<?=$row["school_id"]?>"><?=$row["school_name"]?></a></td>
     
   </tr>
 <?php
