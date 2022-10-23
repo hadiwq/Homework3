@@ -37,10 +37,9 @@ if ($conn->connect_error) {
 }
 $iid = $_GET['school_id'];
 
-$sql = "SELECT `course`.`course_id`, `course`.`prefix`, `course`.`description`, `course`.`instructor_id`, `instructor`.`instructor_name`
-FROM `course`
-	, `instructor`
-WHERE `course`.`instructor_id` = `instructor`.`instructor_id`=" .$iid;
+$sql = "SELECT c.course_id, c.prefix, c.description, c.instructor_id, i.instructor_name
+FROM school s JOIN course c ON s.school_id = c.school_id JOIN instructor i ON i.instructor_id=c.instructor_id
+WHERE c.school_id" .$iid;
 
     $result = $conn->query($sql);
 
