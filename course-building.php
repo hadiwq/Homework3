@@ -45,7 +45,6 @@ while($row = $result->fetch_assoc()) {
     echo "<tr><td>".$row["description"]."</td><td>".$row["room_building"]."</td></tr>";
   }
   echo "</table>";
-  {
 } else {
   echo "0 results";
 }
