@@ -18,8 +18,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>School ID</th>
-      <th>School Name</th>
+      <th>Course Name</th>
+      <th>Building</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -43,8 +44,8 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><a href="instructor-course.php?school_id=<?=$row[ "school_id"]?>"><?=$row["school_id"]?></td>
-    <td><?=$row[ "school_name"]?></td>    
+    <td><?=$row["description"]?></td>
+    <td><?=$row["room_building"]?></td>    
     
   </tr>
 <?php
