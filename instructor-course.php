@@ -39,7 +39,7 @@ $iid = $_GET['school_id'];
 
 $sql = "SELECT c.course_id, c.prefix, c.description, c.instructor_id, i.instructor_name
 FROM school s JOIN course c ON s.school_id = c.school_id JOIN instructor i ON i.instructor_id=c.instructor_id
-WHERE c.school_id=" . $iid;
+WHERE c.school_id" . $iid;
 
     $result = $conn->query($sql);
 
