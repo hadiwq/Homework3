@@ -41,17 +41,16 @@ $dbname = "alqadiou_homework3";
     
 if ($result->num_rows > 0) {
   
-  while($row = $result->fetch_assoc()) {
-?>
-  <tr>
-    <td><?=$row["description"]?></td>
-    <td><?=$row["room_building"]?></td>    
-    
-  </tr>
-<?php
+while($row = $result->fetch_assoc()) {
+    echo "<tr><td>".$row["description"]."</td><td>".$row["room_building"]."</td></tr>";
+  }
+  echo "</table>";
   }
 } else {
   echo "0 results";
 }
 $conn->close();
 ?>
+    
+  </body>
+  </html>
