@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["course_id"]?></td>
     <td><?=$row["prefix"]?></td>
-    <td><?=$row["description"]?></td>
+    <td><a href="course-building.php?school_id=<?=$row[ "description"]?>"><?=$row["description"]?></td>
     <td><?=$row["instructor_id"]?></td>
     <td><?=$row["instructor_name"]?></td>
   </tr>
