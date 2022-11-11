@@ -36,7 +36,10 @@ $dbname = "alqadiou_homework3";
   die("Connection failed: " . $conn->connect_error);
 } 
   
-  $sql = "SELECT s.description, c.room_building FROM classroom c JOIN course s on c.school_id = s.school_id WHERE c.school_id=";
+  $sql = "SELECT `course`.`description`, `classroom`.`room_building`
+FROM `course`
+	, `classroom`
+WHERE `course`.`description` = `school`.`school_id` AND `classroom`.`room_building` = `school`.`school_id`=";
     $result = $conn->query($sql);
     
 if ($result->num_rows > 0) {
