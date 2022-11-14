@@ -43,7 +43,11 @@ $dbname = "alqadiou_homework3";
 if ($result->num_rows > 0) {
   
 while($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row["description"]."</td><td>".$row["room_building"]."</td></tr>";
+  ?>
+  <tr>
+    <td><?=$row["course_name"]?></td>
+    <td><?=$row["description"]?></td>
+  </tr>
   }
   echo "</table>";
 } else {
