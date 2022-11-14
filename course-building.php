@@ -48,6 +48,7 @@ while($row = $result->fetch_assoc()) {
     <td><?=$row["course_name"]?></td>
     <td><?=$row["description"]?></td>
   </tr>
+  <?php
   }
   echo "</table>";
 } else {
