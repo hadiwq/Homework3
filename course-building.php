@@ -50,7 +50,6 @@ while($row = $result->fetch_assoc()) {
   </tr>
   <?php
   }
-  echo "</table>";
 } else {
   echo "0 results";
 }
