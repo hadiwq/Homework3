@@ -37,7 +37,10 @@ $dbname = "alqadiou_homework3";
 } 
     $iiid = $_POST['school_id'];
   
-  $sql = "SELECT c.description, b.room_building FROM school s JOIN course c on s.school_id = c.school_id JOIN classroom b on b.school_id=c.school_id WHERE c.school_id=" . $iiid;
+  $sql = "SELECT `course`.`description`, `classroom`.`room_building`
+FROM `course`
+	, `classroom`
+WHERE `course`.`description` = `classroom`.`school_id`=" . $iiid;
     $result = $conn->query($sql);
     
 if ($result->num_rows > 0) {
