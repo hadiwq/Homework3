@@ -35,7 +35,7 @@ $dbname = "alqadiou_homework3";
   if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 } 
-    $iiid = $_POST['school_id'];
+    $iiid = $_GET['school_id'];
   
   $sql = "SELECT `course`.`description`, `classroom`.`room_building`
 FROM `course`
