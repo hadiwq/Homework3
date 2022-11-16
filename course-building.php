@@ -40,6 +40,7 @@ $dbname = "alqadiou_homework3";
   $sql = "SELECT c.description, b.room_building
 FROM course c JOIN classroom b ON c.school_id = b.school_id
 WHERE c.school_id=" . $iiid;
+    echo $sql;
     $result = $conn->query($sql);
     
 if ($result->num_rows > 0) {
