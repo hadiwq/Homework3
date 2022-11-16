@@ -38,7 +38,7 @@ $dbname = "alqadiou_homework3";
     $iiid = $_GET['school_id'];
   
   $sql = "SELECT c.description, b.room_building
-FROM school s JOIN classroom d ON s.school_id = c.school_id JOIN room_building
+FROM school s JOIN classroom d ON s.school_id = d.school_id JOIN room_building
 WHERE c.school_id=" . $iiid;
     $result = $conn->query($sql);
     
