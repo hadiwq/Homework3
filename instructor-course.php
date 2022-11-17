@@ -18,6 +18,7 @@
       <th>Course ID</th>
       <th>Prefix</th>
       <th>Description</th>
+      <th>School ID</th>
       <th>Instructor ID</th>
       <th>Instructor Name</th>
     </tr>
@@ -37,9 +38,7 @@ if ($conn->connect_error) {
 }
 $iid = $_GET['school_id'];
 
-$sql = "SELECT c.course_id, c.prefix, c.description, c.instructor_id, i.instructor_name
-FROM school s JOIN course c ON s.school_id = c.school_id JOIN instructor i ON i.instructor_id=c.instructor_id
-WHERE c.school_id=" . $iid;
+$sql = "SELECT c.course_id, c.prefix, c.description, c.school_id, c.instructor_id, i.instructor_name FROM school s JOIN course c ON s.school_id = c.school_id JOIN instructor i ON i.instructor_id=c.instructor_id WHERE c.school_id=" . $iid;
 
     $result = $conn->query($sql);
 
@@ -50,7 +49,8 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["course_id"]?></td>
     <td><?=$row["prefix"]?></td>
-    <td><a href="course-building.php?school_id=<?=$row[ "description"]?>"><?=$row["description"]?></td>
+    <td><?=$row["description"]?></td>
+    <td><a href="course-building.php?school_id=<?=$row[ "school_id"]?>"><?=$row["school_id"]?></td>
     <td><?=$row["instructor_id"]?></td>
     <td><?=$row["instructor_name"]?></td>
   </tr>
