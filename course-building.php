@@ -49,7 +49,7 @@ while($row = $result->fetch_assoc()) {
   ?>
   <tr>
     <td><?=$row["course_name"]?></td>
-    <td><?=$row["description"]?></td>
+    <td><?=$row["room_building"]?></td>
   </tr>
   <?php
   }
