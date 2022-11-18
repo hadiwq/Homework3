@@ -34,7 +34,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$id = $_GET['school_id'];
+$id = $_POST['school_id'];
 
 $sql = "SELECT c.course_id, c.prefix, c.description, s.school_id FROM course c JOIN school s ON c.school_id = s.school_id=" .$id
 
