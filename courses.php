@@ -42,9 +42,17 @@ $dbname = "alqadiou_homework3";
 if ($result->num_rows > 0) {
   
   while($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row["course_id"]."</td><td>".$row["prefix"]."</td><td>".$row["description"]."</td><td>".$row["school_id"]."</td></tr>";
+?>
+  <tr>
+    <td><?=$row["course_id"]?></td>
+    <td><?=$row["prefix"]?></td>
+    <td><?=$row["description"]?></td>
+    <td><a href="coursesfiltered.php?school_id=<?=$row[ "school_id"]?>"><?=$row["school_id"]?></td>
+    <td><?=$row["instructor_id"]?></td>
+    <td><?=$row["instructor_name"]?></td>
+  </tr>
+<?php
   }
-  echo "</table>";
 } else {
   echo "0 results";
 }
