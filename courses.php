@@ -48,8 +48,6 @@ if ($result->num_rows > 0) {
     <td><?=$row["prefix"]?></td>
     <td><?=$row["description"]?></td>
     <td><a href="coursesfiltered.php?school_id=<?=$row[ "school_id"]?>"><?=$row["school_id"]?></td>
-    <td><?=$row["instructor_id"]?></td>
-    <td><?=$row["instructor_name"]?></td>
   </tr>
 <?php
   }
