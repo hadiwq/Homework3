@@ -19,8 +19,6 @@
       <th>Prefix</th>
       <th>Description</th>
       <th>School ID</th>
-      <th>Instructor ID</th>
-      <th>Instructor Name</th>
     </tr>
   </thead>
   <tbody>
@@ -36,4 +34,26 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$cid = $_POST['school_id'];
+$id = $_POST['school_id'];
+
+$sql = "SELECT c.course_id, c.prefix, c.description, s.school_id FROM course c JOIN school s ON c.school_id = s.school_id=" .$id
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+?>
+  <tr>
+    <td><?=$row["course_id"]?></td>
+    <td><?=$row["prefix"]?></td>
+    <td><?=$row["description"]?></td>
+    <td><?=$row["school_id"]?></td>
+  </tr>
+<?php
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
